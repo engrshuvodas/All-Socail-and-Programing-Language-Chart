@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+body{
+    background: #222;
+    font-family: 'Roboto Mono', monospace;
+    margin: 100px;
+    color: rgb(37, 165, 165);
+}
+a{
+    text-decoration: none;
+}
+.periodic-table{
+    display: grid;
+    grid-template-columns: repeat(9, 100px);   
+    grid-template-rows: repeat(4, 100px);
+    grid-gap: 10px;
+    margin: auto;
+    max-width: 1200px; 
+    justify-content: center;
+
+}
+.periodic-element{
+    border: thin dotted;
+    position: relative;
+    z-index: 1;
+    cursor: default;
+    animation-duration: 4s;
+    animation-name: example;
+
+}
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+  }
+.periodic-element .periodic-element-inner{
+    background: #202e38;
+    padding: 10px 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 20px);
+    transition: inherit;
+}
+.periodic-element .title{
+    font: 700 26.1538px 'Roboto Mono', monospace;
+    margin: 0.3em 0 0;
+    transition: 0.8 ease 600ms;
+}
+.periodic-table .desc{
+    font: 500 12px 'Roboto Mono', monospace;
+    margin-top: -0.2em;
+
+}
+.periodic-element:hover{
+    transform: scale(1.12);
+    z-index: 10;
+}
+.periodic-element:hover .periodic-element-inner{
+    background: transparent;
+}
+.periodic-element:hover .title, .periodic-element:hover{
+    -webkit-text-fill-color: #222;
+}
+.periodic-element:hover:after{
+    top: 105%;
+    opacity: 1;
+}
+.periodic-element{
+    cursor: pointer;
+}
+span.one{
+    border: 1px dashed linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
+}
+.one .title, .one .desc{
+    background: -webkit-linear-gradient(#f3f9a6, #cbc634);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.four{
+    background: linear-gradient(to bottom right, #fa7f72 0%, #ffc171 100%);
+}
+
+.four .title, .four .desc{
+    background: -webkit-linear-gradient(#fa7f72, #ffc171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.empty-space-1{
+    grid-column: 3/span 4;
+    grid-row: 1;
+}
+.periodic-element .desc{
+    width: 100px;
+    height: 100px;
+}
+p{
+    max-width: 1000px;
+    margin-top: 50px;
+    text-align: left;
+    margin-left:480px;
+}
+
+    
+    .drop-cap:first-letter {
+        float: left;
+        font-size: 4em;
+        line-height: 1;
+        margin: .125em .25em;
+        color: #fa7f72
+      }
+.AM{
+    justify-content: center;
+    margin-left: 930px
+}
